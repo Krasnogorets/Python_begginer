@@ -7,26 +7,48 @@
 # Здесь каждое число – это масса соответствующего арбуза
 # Input: 5 -> 5 1 6 5 9
 # Output: 1 9
-N = int(input('Введите общее количество арбузов: '))
-if N > 2:
-    i = 1
-    maxWeight = const = 0.1
-    minWeight = const1 = 30
-    while i <= N:
+# N = int(input('Введите общее количество арбузов: '))
+# if N > 2:
+#     i = 1
+#     maxWeight = const = 0.1
+#     minWeight = const1 = 30
+#     while i <= N:
+#         flag = True
+#         while flag:
+#             weight = float(input(f'Введите вес (от 0.1 до 30) {i}-го арбуза в кг  '))
+#             if weight < const or weight > const1:
+#                 flag = True
+#             else:
+#                 flag = False
+#         if weight > maxWeight:
+#             maxWeight = weight
+#         if weight < minWeight:
+#             minWeight = weight
+#         i += 1
+#     print(f'Самый легкий арбуз: {minWeight}кг, самый тяжелый : {maxWeight}кг')
+# elif N >= 0:
+#     print(f"Среди {N} арбузов не определить самый легкий и самый тяжелый")
+# elif N < 0:
+#     print(f"Отрицательное количество арбузов не в этой вселенной")
+
+# Задача 2: На столе лежат n монеток. Некоторые из них лежат вверх решкой,
+# а некоторые – гербом. Определите минимальное число монеток,
+# которые нужно перевернуть, чтобы все монетки были повернуты вверх одной и той же стороной.
+# Выведите минимальное количество монет, которые нужно перевернуть
+
+# мое понимание, что количество монет гербом или решкой неизвестно, т.е не задаются никак
+minCoin=1
+maxCoin=100
+flag = True
+while flag:
+    N = int(input(f'Введите количество монет от {minCoin} до {maxCoin}: '))
+    if N < minCoin or N > maxCoin:
         flag = True
-        while flag:
-            weight = float(input(f'Введите вес (от 0.1 до 30) {i}-го арбуза в кг  '))
-            if weight < const or weight > const1:
-                flag = True
-            else:
-                flag = False
-        if weight > maxWeight:
-            maxWeight = weight
-        if weight < minWeight:
-            minWeight = weight
-        i += 1
-    print(f'Самый легкий арбуз: {minWeight}кг, самый тяжелый : {maxWeight}кг')
-elif N >= 0:
-    print(f"Среди {N} арбузов не определить самый легкий и самый тяжелый")
-elif N < 0:
-    print(f"Отрицательное количество арбузов не в этой вселенной")
+        print('Количество монет не в диапазоне ввода')
+    else:
+        flag = False
+if N == 1:
+    print('Такое количество монет невозможно по условию задачи, т.к. должны быть монеты и с гербом и с решкой')
+else:
+    print(f'Минимальное количество монет, которое нужно перевернуть = {minCoin}, '
+              f'максимальное количество монет, которое нужно перевернуть = {N // 2}')
