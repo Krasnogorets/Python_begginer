@@ -16,6 +16,21 @@
 #     if x == int(nList[i]):
 #         count += 1
 # print(count)
+# var 2
+n = int(input('Введите размер списка: '))
+list_4 = []
+x = 0
+for i in range(0, n + 1):
+    if i == n:
+        x = input(f'Введите искомое X: ')
+    else:
+        list_4.append(input(f'Введите {i}-ое число: '))
+count = 0
+for i in list_4:
+    if i == x:
+        count += 1
+print(f" Число {x} встречается {count} раз")
+
 
 # Задача 18: Требуется найти в массиве A[1..N] самый близкий по
 # величине элемент к заданному числу X. Пользователь в первой строке
