@@ -68,12 +68,10 @@ for i in range(0, n + 1):
     if i == n:
         x = int(input(f'Введите искомое X: '))
     else:
-        list_4.append(float(input(f'Введите {i}-ое число, можно десятичную дробь: ')))
+        list_4.append(int(input(f'Введите {i}-ое целое число: ')))
 numCloser = list_4[0]
 for i in list_4:
     if x > 0:
-        if numCloser < i <= x:  # самый близкий либо равен либо наибольший из списка
-            maxResult = i
-    if x < 0:
-        maxResult = 1
-print(round(maxResult,2))
+        if numCloser - x < i - x:
+            numCloser = i
+print(numCloser)

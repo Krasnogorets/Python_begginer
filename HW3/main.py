@@ -43,19 +43,20 @@ print(f" Число {x} встречается {count} раз")
 # 6
 #  -> 5
 # var 1
-# n = int(input('Введите размер списка: '))
-# nList = [i for i in range(1, n + 1)]
-# print(nList)
-# x = int(input('Введите искомое число Х: '))
-# numCloser = nList[0]
-# maxResult = 0
-# for i in range(len(nList)):
-#     if x > 0:
-#         if numCloser < nList[i] <= x:  # самый близкий либо равен либо наибольший из списка
-#             maxResult = nList[i]
-#     if x < 0:
-#         maxResult = 1
-# print(maxResult)
+n = int(input('Введите размер списка: '))
+list_4 = []
+x = 0
+for i in range(0, n + 1):
+    if i == n:
+        x = int(input(f'Введите искомое X: '))
+    else:
+        list_4.append(int(input(f'Введите {i}-ое целое число: ')))
+numCloser = list_4[0]
+for i in list_4:
+    if x > 0:
+        if numCloser - x < i - x:
+            numCloser = i
+print(numCloser)
 # var 2 покороче, можно еще короче если не обрабатывать отрицательный вариант
 
 # n = int(input('Введите размер списка: '))
