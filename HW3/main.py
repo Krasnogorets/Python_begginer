@@ -108,3 +108,18 @@ result = 0
 for i in range(len(word)):
     result += int(dict[word[i]])
 print(result)
+#var2
+dict1 = {'1': "[A, E, I, O, U, L, N, S, T, R, А, В, Е, И, Н, О, Р, С, Т]",
+         '2': '[D, G, Д, К, Л, М, П, У]',
+         '3': '[B, C, M, P, Б, Г, Ё, Ь, Я]',
+         '4': '[F, H, V, W, Y, Й, Ы]',
+         '5': '[K, Ж, З, Х, Ц, Ч]',
+         '8': '[J, X, Ш, Э, Ю]',
+         '10': '[Q, Z, Ф, Щ, Ъ]'}
+word = input('Введите слово на русском или английском или смешанном англо-русском алфавите:').upper()
+result = 0
+for m in range(len(word)):
+    for i, j in dict1.items():
+        if word[m] in j:
+            result += int(i)
+print(result)
