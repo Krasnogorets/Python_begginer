@@ -48,6 +48,7 @@ print(f" Число {x} встречается {count} раз")
 # print(nList)
 # x = int(input('Введите искомое число Х: '))
 # numCloser = nList[0]
+# maxResult = 0
 # for i in range(len(nList)):
 #     if x > 0:
 #         if numCloser < nList[i] <= x:  # самый близкий либо равен либо наибольший из списка
