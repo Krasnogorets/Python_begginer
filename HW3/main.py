@@ -17,19 +17,19 @@
 #         count += 1
 # print(count)
 # var 2
-n = int(input('Введите размер списка: '))
-list_4 = []
-x = 0
-for i in range(0, n + 1):
-    if i == n:
-        x = input(f'Введите искомое X: ')
-    else:
-        list_4.append(input(f'Введите {i}-ое число: '))
-count = 0
-for i in list_4:
-    if i == x:
-        count += 1
-print(f" Число {x} встречается {count} раз")
+# n = int(input('Введите размер списка: '))
+# list_4 = []
+# x = 0
+# for i in range(0, n + 1):
+#     if i == n:
+#         x = input(f'Введите искомое X: ')
+#     else:
+#         list_4.append(input(f'Введите {i}-ое число: '))
+# count = 0
+# for i in list_4:
+#     if i == x:
+#         count += 1
+# print(f" Число {x} встречается {count} раз")
 
 
 # Задача 18: Требуется найти в массиве A[1..N] самый близкий по
@@ -43,20 +43,20 @@ print(f" Число {x} встречается {count} раз")
 # 6
 #  -> 5
 # var 1
-n = int(input('Введите размер списка: '))
-list_4 = []
-x = 0
-for i in range(0, n + 1):
-    if i == n:
-        x = int(input(f'Введите искомое X: '))
-    else:
-        list_4.append(int(input(f'Введите {i}-ое целое число: ')))
-numCloser = list_4[0]
-for i in list_4:
-    if x > 0:
-        if numCloser - x < i - x:
-            numCloser = i
-print(numCloser)
+# n = int(input('Введите размер списка: '))
+# list_4 = []
+# x = 0
+# for i in range(0, n + 1):
+#     if i == n:
+#         x = int(input(f'Введите искомое X: '))
+#     else:
+#         list_4.append(int(input(f'Введите {i}-ое целое число: ')))
+# numCloser = list_4[0]
+# for i in list_4:
+#     if x > 0:
+#         if numCloser - x < i - x:
+#             numCloser = i
+# print(numCloser)
 # var 2 покороче, можно еще короче если не обрабатывать отрицательный вариант
 
 # n = int(input('Введите размер списка: '))
