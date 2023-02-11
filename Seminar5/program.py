@@ -114,7 +114,6 @@
 # list1 = []
 # i = 0
 #
-#
 # def input1(i, n, list1):
 #     if i == n:
 #         return list1
@@ -122,41 +121,62 @@
 #     i += 1
 #     return input1(i, n, list1)
 # input1(i,n,list1)
-# list1.sort()
+# list1.sort(reverse=True)
 # print(list1)
-# var2
+
+#var3 как решили на семинаре, не работает если числа в разнобой поставили
+def change(x):
+    if x ==0:
+        return ""
+    nums= int(input(":"))
+    print(f' {nums}')
+    return change(x-1) + f' {nums}'
+
 n = int(input('Введите число n:'))
-list1 = []
+print(change(n))
 
-
-def input1(i, n, list1):
-    if i == n:
-        return list1
-    list1.append(int(input(f'Введите элемент {i}:')))
-    i += 1
-    return input1(i, n, list1)
-
-
-i = 0
-input1(i, n, list1)
-
-
-def sortN(i,n,min3,list1):
-    if i == n:
-        return list1
-    temp=0
-    list1[i+1]<list2[i]:
-
-def min1(i, n, min3, list1):
-    if i == n:
-        return min3,i
-    min3 = list1[i]
-    if list1[i] < min3:
-        min3 = list1[i]
-    i += 1
-    return min1(i, n, min3, list1)
-
-
-min3 = list1[0]
-print(min1(i, n, min3 ,list1))
-
+# var2 незакончен
+# n = int(input('Введите число n:'))
+# list1 = []
+#
+#
+# def input1(i, n, list1):
+#     if i == n:
+#         return list1
+#     list1.append(int(input(f'Введите элемент {i}:')))
+#     i += 1
+#     return input1(i, n, list1)
+#
+#
+# def sortN(j,i, n, min3, list1):  # i сюда приходит как положение мин члена
+#     if j == n:
+#         return list1
+#     temp = 0
+#     temp = list1[j]
+#     list1[j] = min3
+#     list2 = []
+#     list2 = list1.copy()
+#     list2 = list2.pop(0)
+#     j += 1
+#     print(list2,list1,j,min3,n)
+#     min1(i, n, min3, list2)
+#
+#
+# def min1(i, n, min3, list1):
+#     if i == n:
+#         return min3, i
+#     min3 = list1[i]
+#     if list1[i] < min3:
+#         min3 = list1[i]
+#     i += 1
+#     return min1(i, n, min3, list1)
+#
+#
+# i = 0
+# input1(i, n, list1)
+#
+# min3 = list1[0]
+# min3, i = min1(i, n, min3, list1)
+# j=0
+# sortN(j,i, n, min3, list1)
+# print(list1)
