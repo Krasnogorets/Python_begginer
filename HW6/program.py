@@ -60,12 +60,12 @@ for i in range(100, n):  # начинаю со 100, т.к. первое друж
     for k in range(1, tempValue):
         if tempValue % k == 0:
             SumDiv += k
-    if SumDiv != 1 and SumDiv !=0 :  # избавляемся от простых чисел, т.к у всех у них сумма делителей 1
+    if SumDiv != 1 and SumDiv != 0:  # избавляемся от простых чисел, т.к у всех у них сумма делителей 1
         tempDict[tempValue] = SumDiv
 for i, k in tempDict.items():
     for j, m in tempDict.items():
-        if i == m and j==k and i != j:
-            tempList = [i,j]
+        if i == m and j == k and i != j:
+            tempList = [i, j]  # промежуточный список для хранения дружественных пар
             tempList.sort()
             pairDict.add(tuple(tempList))
             tempList.clear()
