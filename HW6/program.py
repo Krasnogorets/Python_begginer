@@ -50,52 +50,66 @@ import random
 # 300 220 284
 import time
 
-# n = int(input('Введите число к не более 1 000 000:'))
-# if n > 1_000_000:
-#     print(" число выходит за диапазон")
-#     exit()
-# tempDict = {}  # словарь для хранения числа и сум его делителей
-# pairDict = set()  # множество для хранения дружественных пар
-# tic = time.perf_counter()
-# for i in range(100, n):  # начинаю со 100, т.к. первое дружественое 220
-#     SumDiv = 0  # временная переменная для суммирования делителей
-#     tempValue = i
-#     for k in range(1, tempValue):
-#         if tempValue % k == 0:
-#             SumDiv += k
-#     if SumDiv != 1 and SumDiv != 0:
-#         tempDict[tempValue] = SumDiv
-# toc = time.perf_counter()
-# print(f"Вычисление заняло {toc - tic:0.4f} секунд")
-# tic = time.perf_counter()
-# for i, k in tempDict.items():
-#     for j, m in tempDict.items():
-#         if i == m and j == k and i != j:
-#             tempList = [i, j]  # промежуточный список для хранения дружественных пар
-#             tempList.sort()
-#             pairDict.add(tuple(tempList))
-#             tempList.clear()
-# toc = time.perf_counter()
-# print(f"Вычисление заняло {toc - tic:0.4f} секунд")
-# print(f'Пары дружественных чисел : ', *pairDict)
 n = int(input('Введите число к не более 1 000 000:'))
-divsum = [0] * (n + 1)
-
+if n > 1_000_000:
+    print(" число выходит за диапазон")
+    exit()
+tempDict = {}  # словарь для хранения числа и сум его делителей
+pairDict = set()  # множество для хранения дружественных пар
 tic = time.perf_counter()
-for i in range(1, n + 1):
-    k = 1
-    x = 2
-    while x * x < i:
-        if i % x == 0:
-            k += x
-            k += i // x
-        x += 1
-    if x * x == i:
-        k += x
-
-    if k <= n:
-        divsum[i] = k
-        if k < i and divsum[k] == i:
-            print(i, k)
+for i in range(1, n):  # начинаю со 100, т.к. первое дружественое 220
+    SumDiv = 0  # временная переменная для суммирования делителей
+    tempValue = i
+    for k in range(1, tempValue):
+        if tempValue % k == 0:
+            SumDiv += k
+    if SumDiv != 1 and SumDiv != 0:
+        tempDict[tempValue] = SumDiv
+for i, k in tempDict.items():
+    for j, m in tempDict.items():
+        if i == m and j == k and i != j:
+            tempList = [i, j]  # промежуточный список для хранения дружественных пар
+            tempList.sort()
+            pairDict.add(tuple(tempList))
+            tempList.clear()
 toc = time.perf_counter()
 print(f"Вычисление заняло {toc - tic:0.4f} секунд")
+print(f'Пары дружественных чисел : ', *pairDict)
+# n = int(input('Введите число к не более 1 000 000:'))
+# divsum = [0] * (n + 1)
+#
+# tic = time.perf_counter()
+# for i in range(1, n + 1):
+#     k = 1
+#     x = 2
+#     while x * x < i:
+#         if i % x == 0:
+#             k += x
+#             k += i // x
+#         x += 1
+#     if x * x == i:
+#         k += x
+#
+#     if k <= n:
+#         divsum[i] = k
+#         if k < i and divsum[k] == i:
+#             print(i, k)
+# toc = time.perf_counter()
+# print(f"Вычисление заняло {toc - tic:0.4f} секунд")
+
+n = int(input()) # решения предложенное как эталонное но оно дольше
+tic = time.perf_counter()
+list_1 = list()
+for i in range(n):
+    summa = 0
+    for j in range(1, i // 2 + 1):
+        if i % j == 0:
+            summa += j
+    list_1.append(tuple([i, summa]))
+for i in range(len(list_1)):
+    for j in range(i, len(list_1)):
+        if i != j and list_1[i][0] == list_1[j][1] and list_1[i][1] == list_1[j][0]:
+            print(*list_1[i])
+toc = time.perf_counter()
+print(f"Вычисление заняло {toc - tic:0.4f} секунд")
+
