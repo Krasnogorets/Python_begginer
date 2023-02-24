@@ -21,15 +21,20 @@ def find_data(x):
                 print(i, end="")
                 flag = True
             elif find_feature in list_feature and x == 2:
-                return i, lines, list_feature
+                    return i, lines, list_feature
             elif find_feature in list_feature and x == 3:
-                return i, lines, list_feature
+                    return i, lines, list_feature
         if not flag:
             print("такой записи не найдено")
 
 
 def replace_data():
-    i, lines, list_feature = find_data(2)
+    try:
+        i, lines, list_feature = find_data(2)
+    except TypeError:
+        print("не ищите того , чего нет в справочнике в жизни! ")
+        return
+
     print(i, end="")
     while True:
         get_choice = (int(input(
@@ -67,7 +72,12 @@ def write_lines(lines, list_feature, i):
 
 
 def remove_data():
-    i, lines, list_feature = find_data(3)
+    try:
+        i, lines, list_feature = find_data(3)
+    except TypeError:
+        print("не ищите того , чего нет в справочнике в жизни! ")
+        return
+    print(i, end="")
     m = int(input('Желаете полностью удалить эту строк? (1-да, 2-нет)'))
     if m == 1:
         lines.remove(i)
